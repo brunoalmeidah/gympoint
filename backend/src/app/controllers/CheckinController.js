@@ -4,6 +4,13 @@ import Checkin from '../models/Checkin';
 import Student from '../models/Student';
 
 class CheckinController {
+  async index(req, res) {
+    const checkins = await Checkin.findAll({
+      where: { student_id: req.params.id },
+    });
+    return res.json(checkins);
+  }
+
   async store(req, res) {
     const student = Student.findByPk(req.params.id);
 
@@ -23,13 +30,6 @@ class CheckinController {
     const checkin = await Checkin.create({ student_id: req.params.id });
 
     return res.json(checkin);
-  }
-
-  async show(req, res) {
-    const checkins = await Checkin.findAll({
-      where: { student_id: req.params.id },
-    });
-    return res.json(checkins);
   }
 }
 
