@@ -13,9 +13,9 @@ class RegistrationMail {
       subject: 'Seja bem vindo(a) a Gympoint',
       template: 'registration',
       context: {
-        end_date: format(parseISO(registration.end_date), "dd'/'MM'/'YYYY"),
+        end_date: format(parseISO(registration.end_date), "dd'/'MM'/'yyyy"),
         plan: registration.plan.title,
-        price: registration.price,
+        price: `R$ ${registration.price}`,
       },
     });
   }
