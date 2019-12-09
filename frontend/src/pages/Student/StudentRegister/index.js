@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Form } from '@rocketseat/unform';
 import Card from '~/components/Card';
 import { Container, Row, Col, InputDefault, Label } from '~/styles/default';
 
-export default function StudentRegister({ props }) {
+export default function StudentRegister() {
+  const { id } = useParams();
+  useEffect(() => {
+    console.log(id);
+  }, []);
   function handleSubmit(data) {
     console.tron(data);
   }

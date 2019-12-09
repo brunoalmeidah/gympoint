@@ -4,6 +4,7 @@ import Route from './Route';
 import SignIn from '~/pages/SignIn';
 import StudentList from '~/pages/Student/StudentList';
 import StudentRegister from '~/pages/Student/StudentRegister';
+import PlanList from '~/pages/Plan/PlanList';
 // import { Container } from './styles';
 
 export default function Routes() {
@@ -12,8 +13,8 @@ export default function Routes() {
       <Route path="/" exact component={SignIn} />
       <Route path="/students" exact component={StudentList} isPrivate />
       <Route path="/students/new" component={StudentRegister} isPrivate />
-      <Route path="/students/edit" component={StudentRegister} isPrivate />
-      <Route path="/plans" exact component={StudentRegister} isPrivate />
+      <Route path="/students/edit/:id" component={StudentRegister} isPrivate />
+      <Route path="/plans" exact component={PlanList} isPrivate />
     </Switch>
   );
 }
