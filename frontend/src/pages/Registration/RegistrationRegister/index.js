@@ -4,45 +4,48 @@ import { Form } from '@rocketseat/unform';
 import Card from '~/components/Card';
 import { Container, Row, Col, InputDefault, Label } from '~/styles/default';
 
-export default function StudentRegister() {
+export default function RegistrationRegister() {
   const { id } = useParams();
   useEffect(() => {
     console.log(id);
   }, []);
   function handleSubmit(data) {
-    console.tron.log(data);
+    console.tron(data);
   }
   return (
     <Form onSubmit={handleSubmit}>
-      <Card title="Cadastro de Aluno" width="700px" submit backTo="/students">
+      <Card
+        title="Cadastro de matrícula"
+        width="700px"
+        submit
+        backTo="/registrations"
+      >
         <Container>
           <Row>
             <Col>
-              <Label>NOME COMPLETO</Label>
-              <InputDefault name="name" />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Label>ENDEREÇO DE E-MAIL</Label>
-              <InputDefault name="email" type="email" />
+              <Label>ALUNO</Label>
+              <InputDefault name="student" />
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <Label>IDADE</Label>
-              <InputDefault name="age" />
+              <Label>PLANO</Label>
+              <InputDefault name="plan" />
             </Col>
 
             <Col>
-              <Label>PESO (em kg)</Label>
-              <InputDefault name="weight" />
+              <Label>DATA DE INÍCIO</Label>
+              <InputDefault name="price" />
             </Col>
 
             <Col>
-              <Label>ALTURA</Label>
-              <InputDefault name="height" />
+              <Label>DATA DE TÉRMINO</Label>
+              <InputDefault name="total" />
+            </Col>
+            <Col>
+              <Label>VALOR FINAL</Label>
+              <InputDefault name="total" />
             </Col>
           </Row>
         </Container>

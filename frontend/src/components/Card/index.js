@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MdAdd, MdDone, MdKeyboardArrowLeft } from 'react-icons/md';
 
-import { Container, Header, Body, Button, LinkBack } from './styles';
+import { Container, Header, Body, Button, Linkto } from './styles';
 
 export default function Card({
   children,
   title,
   width,
-  linkbackto,
-  handleRegister,
+  backTo,
+  registerTo,
   submit,
   handleSearch,
 }) {
@@ -18,18 +18,18 @@ export default function Card({
       <Header>
         <h1>{title}</h1>
         <div>
-          {linkbackto !== '' && linkbackto ? (
-            <LinkBack to={linkbackto}>
+          {backTo !== '' && backTo ? (
+            <Linkto to={backTo}>
               <MdKeyboardArrowLeft /> VOLTAR
-            </LinkBack>
+            </Linkto>
           ) : (
             ''
           )}
-          {handleRegister ? (
-            <Button primary onClick={handleRegister}>
+          {registerTo !== '' && registerTo ? (
+            <Linkto primary to={registerTo}>
               <MdAdd />
               CADASTRAR
-            </Button>
+            </Linkto>
           ) : (
             ''
           )}
@@ -61,8 +61,16 @@ Card.propTypes = {
   children: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   width: PropTypes.string,
+  backTo: PropTypes.string,
+  registerTo: PropTypes.string,
+  submit: PropTypes.bool,
+  handleSearch: PropTypes.func,
 };
 
 Card.defaultProps = {
   width: '700px',
+  backTo: '',
+  registerTo: '',
+  submit: false,
+  handleSearch: undefined,
 };

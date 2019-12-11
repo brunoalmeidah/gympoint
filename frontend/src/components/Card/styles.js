@@ -53,11 +53,11 @@ export const Button = styled.button.attrs(props => ({
   }
 `;
 
-export const LinkBack = styled(Link)`
+export const Linkto = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #cccccc;
+  background-color: ${props => (props.primary ? '#EE4D64' : '#CCCCCC')};
   padding: 7px 20px;
   border-radius: 4px;
   margin-left: 10px;

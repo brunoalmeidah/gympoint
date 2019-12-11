@@ -1,19 +1,11 @@
 import React from 'react';
 import Card from '~/components/Card';
-import history from '~/services/history';
-import { Container, LinkBlue, LinkRed, Th, Td } from './styles';
+import { Container } from './styles';
+import { LinkBlue, LinkRed, Th, Td } from '~/styles/default';
 
 export default function StudentList() {
-  const handleRegister = () => {
-    history.push('/students/new');
-  };
-
   return (
-    <Card
-      title="Gerenciando alunos"
-      width="1000px"
-      handleRegister={handleRegister}
-    >
+    <Card title="Gerenciando alunos" width="1000px" registerTo="/students/new">
       <Container>
         <table>
           <thead>
